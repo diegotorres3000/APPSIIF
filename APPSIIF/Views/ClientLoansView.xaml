@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.ClientLoansView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                xmlns:cellRenderer="clr-namespace:APPSIIF.Renderer.CellRenderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <StackLayout>
+        <renderer:MyFrameRenderer TypeBorder="None"
+                                  Margin="0,0,0,10">
+            <StackLayout>
+                <Label Style="{DynamicResource MySubTitle}"
+                       Text="Colocaciones"/>
+                <Label Style="{DynamicResource MySubTitle}"
+                       Text="1049651765"/>
+                <Label Style="{DynamicResource MySubTitle}"
+                       Text="Diego Alejandro Torres Niño"/>
+            </StackLayout>
+        </renderer:MyFrameRenderer>
+        <ListView ItemsSource="{Binding Loans}"
+                  SeparatorVisibility="None"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True"
+                  BackgroundColor="Transparent"
+                  ItemSelected="SelectedLoan">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellRenderer:LoanCellRenderer>               
+                    </cellRenderer:LoanCellRenderer>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>  
+    </StackLayout>
+</renderer:MyContentPageRenderer>

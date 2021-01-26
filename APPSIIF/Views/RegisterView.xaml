@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="APPSIIF.Views.RegisterView"
+    xmlns:renderer="clr-namespace:APPSIIF.Renderer">
+    <StackLayout VerticalOptions="FillAndExpand">
+    <StackLayout VerticalOptions="Start">
+
+    </StackLayout >
+    <ScrollView VerticalOptions="CenterAndExpand">
+        <StackLayout   Padding ="5" Margin="10,0">
+            <Image Source="{StaticResource CompanyImage}"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       MinimumHeightRequest="250"
+                       MinimumWidthRequest="250"/>
+            <renderer:MyEntryRenderer Placeholder="Nombre de Usuario"
+                                      SourceImageLeft="icon_nid.png"
+                                      HeightRequest="40"
+                                      Text="{Binding TextNickName, Mode=TwoWay}"
+                                      StaticColor="{DynamicResource ItemColor}"
+                                      PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                      IsRequired="True">
+                <Entry.Behaviors>
+                </Entry.Behaviors>
+            </renderer:MyEntryRenderer>
+            <Label HorizontalTextAlignment="Center"
+                   IsVisible="false"
+                   FontSize="{DynamicResource MyMicroFontSize}"
+                   TextColor="{DynamicResource MyRed}"/>
+            <renderer:MyEntryRenderer MyIsPassword="true"
+                                      Placeholder="Código de Verificación"
+                                      SourceImageLeft="icon_pass.png"
+                                      HeightRequest="40"
+                                      Text="{Binding TextVerificationCode, Mode=TwoWay}"
+                                      StaticColor="{DynamicResource ItemColor}"
+                                      PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                      IsRequired="True">
+                <Entry.Behaviors>
+                </Entry.Behaviors>
+            </renderer:MyEntryRenderer>
+            <Label HorizontalTextAlignment="Center"
+                   IsVisible="false"
+                   FontSize="{DynamicResource MyMicroFontSize}"
+                   TextColor="{DynamicResource MyRed}"/>
+            <renderer:MyButtonRenderer Text="Enviar"
+                                       Style="{StaticResource ButtonStyle}"
+                                       StaticColor="{DynamicResource StartColorGradient}"
+                                       Clicked="RegisterClicked"
+                                       IsGradient="False">
+            </renderer:MyButtonRenderer>
+            <renderer:MyButtonRenderer Text="Cancelar"
+                                       Style="{StaticResource ButtonStyle}"
+                                       StaticColor="{DynamicResource StartColorGradient}"
+                                       Command="{Binding CancelCommand}"
+                                       IsGradient="False"/>      
+        </StackLayout>
+    </ScrollView>
+    <StackLayout VerticalOptions="End" Orientation="Horizontal" Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="{StaticResource BackImage}"
+                       HeightRequest="25"
+                       WidthRequest="25"
+                       MinimumHeightRequest="25"
+                       MinimumWidthRequest="25"
+                   HorizontalOptions="End"
+                       Grid.Column="0"
+                        Grid.Row="0"/>
+        <Label Text="Copyright SistemasGyG"
+               Style="{DynamicResource MyMicro}"
+               HorizontalOptions="Start"
+               Grid.Column="1"
+               Grid.Row="0"/>
+        </Grid>
+        
+    </StackLayout>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

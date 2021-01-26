@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                mc:Ignorable="d"
+                                x:Class="APPSIIF.MainPage"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                IsGradient="False">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="empresa.png" HeightRequest="{DynamicResource NavigationHeight}">               
+            </Image>           
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ScrollView>
+        <StackLayout>
+            <renderer:MyFrameRenderer TypeBorder="None" Padding="0" HeightRequest="100">
+                <Grid Style="{StaticResource Table}" Margin="20,20,20,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>    
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       Style="{DynamicResource MyTitle}"
+                       Text="Extractos y Certificaciones"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                </Grid>
+            </renderer:MyFrameRenderer>
+        </StackLayout>
+    </ScrollView>
+</renderer:MyContentPageRenderer>

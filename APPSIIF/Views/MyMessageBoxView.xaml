@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="APPSIIF.Views.MyMessageBoxView"
+              xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+              xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+              xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" >
+    <renderer:MyFrameRenderer IsGradient="False"
+                              StaticColor="{Binding MessageGUI.Color}"
+                              BorderRadius="{DynamicResource MyEndsMargin}"
+                              TypeBorder="All"
+                              Margin="20"
+                              VerticalOptions="End">
+        <StackLayout Orientation="Horizontal" >
+            <lottie:AnimationView Animation="{Binding MessageGUI.Animation}"
+                                  Loop="True"
+                                  AutoPlay="True"
+                                  HeightRequest="{DynamicResource MyMenuImageSize}"
+                                  WidthRequest="{DynamicResource MyMenuImageSize}"/>
+            <Label Text="{Binding MessageGUI.Message}"
+                   Style="{DynamicResource MyContent}"/>
+        </StackLayout>
+        
+    </renderer:MyFrameRenderer>
+</rg:PopupPage>

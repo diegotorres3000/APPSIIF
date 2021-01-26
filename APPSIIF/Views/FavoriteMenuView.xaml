@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.FavoriteMenuView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                xmlns:cellRenderer="clr-namespace:APPSIIF.Renderer.CellRenderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <StackLayout Margin="0">
+        <renderer:MyFrameRenderer TypeBorder="None"
+                                  Margin="{DynamicResource MyTitleMargin}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{DynamicResource MyMenuImageSize}"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="{DynamicResource MyMenuImageSize}"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Style="{DynamicResource MySubTitle}"
+                       Text="Opciones mas utilizadas"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
+                <renderer:MyImageRenderer Source="add"
+                                          Foreground="{DynamicResource MyTextColor}"
+                                          HeightRequest="50"
+                                          WidthRequest="50"
+                                          Grid.Row="0"
+                                          Grid.Column="2">
+                    <renderer:MyImageRenderer.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddFovirePageTap" NumberOfTapsRequired="1" />
+                    </renderer:MyImageRenderer.GestureRecognizers>
+                </renderer:MyImageRenderer>
+            </Grid>
+        </renderer:MyFrameRenderer>
+
+        <StackLayout>
+            <renderer:MyPickerRenderer Title="Modulo"
+                                       TextColor="{DynamicResource StartColorGradientText}"
+                                       StaticColor="{DynamicResource ItemColor}"
+                                       TitleColor="{DynamicResource EndColorGradientText}"
+                                       Position="Left"
+                                       Margin="{DynamicResource MyElementFormMargin}">
+                <Picker.Behaviors>
+                </Picker.Behaviors>
+            </renderer:MyPickerRenderer>
+            <renderer:MyEntryRenderer SourceImageLeft="icon_nid.png"
+                                      Placeholder="Pagina"
+                                      ImageLeftColor="{DynamicResource StartColorGradientText}"
+                                      ImageRightColor="{DynamicResource EndColorGradientText}"
+                                      StaticColor="{DynamicResource ItemColor}"
+                                      PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                      Margin="{DynamicResource MyElementFormMargin}">
+                <Entry.Behaviors>
+                </Entry.Behaviors>
+            </renderer:MyEntryRenderer>
+            <Label Style="{DynamicResource MySubTitle}"
+                   Text="Tus Funciones mas utilizadas"
+                   TextColor="{DynamicResource StartColorGradientText}"/>
+            <ListView ItemsSource="{Binding FavoritePages}"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True"
+                      BackgroundColor="Transparent"
+                      ItemSelected="SelectFavoritePage">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cellRenderer:FavoritePageCellRenderer>               
+                        </cellRenderer:FavoritePageCellRenderer>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>     
+        </StackLayout>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

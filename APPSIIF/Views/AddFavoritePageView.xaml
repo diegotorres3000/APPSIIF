@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.AddFavoritePageView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                xmlns:cellRenderer="clr-namespace:APPSIIF.Renderer.CellRenderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <StackLayout Margin="0">
+        <renderer:MyFrameRenderer TypeBorder="None"
+                                  Margin="{DynamicResource MyTitleMargin}">
+            <Label Style="{DynamicResource MySubTitle}"
+                   Text="Buscar Funcion"/>
+        </renderer:MyFrameRenderer>
+
+        <StackLayout>
+            <renderer:MyPickerRenderer Title="Modulo"
+                                       TextColor="{DynamicResource StartColorGradientText}"
+                                       StaticColor="{DynamicResource ItemColor}"
+                                       TitleColor="{DynamicResource EndColorGradientText}"
+                                       Position="Left"
+                                       Margin="{DynamicResource MyElementFormMargin}">
+                <Picker.Behaviors>
+                </Picker.Behaviors>
+            </renderer:MyPickerRenderer>
+            <renderer:MyEntryRenderer SourceImageLeft="icon_nid.png"
+                                      Placeholder="Pagina"
+                                      ImageLeftColor="{DynamicResource StartColorGradientText}"
+                                      ImageRightColor="{DynamicResource EndColorGradientText}"
+                                      StaticColor="{DynamicResource ItemColor}"
+                                      PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                      Margin="{DynamicResource MyElementFormMargin}">
+                <Entry.Behaviors>
+                </Entry.Behaviors>
+            </renderer:MyEntryRenderer>
+
+            <Label Style="{DynamicResource MySubTitle}"
+                   Text="Fuciones Disponibles"
+                   TextColor="{DynamicResource StartColorGradientText}"/>
+
+
+            <ListView ItemsSource="{Binding FavoritePages}"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True"
+                      BackgroundColor="Transparent"
+                      ItemSelected="SelectFavoritePage">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cellRenderer:FavoritePageCellRenderer >               
+                        </cellRenderer:FavoritePageCellRenderer>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>  
+        </StackLayout>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APPSIIF.App">
+    <Application.Resources>
+        <Color x:Key="MyTextColor">#FFFFFF</Color>
+        <Color x:Key="MyRed">#F2333A</Color>
+        <Color x:Key="MyGreen">#34D45C</Color>
+        <FileImageSource x:Key="BackImage">empresa.png</FileImageSource>
+        <FileImageSource x:Key="CompanyImage">empresa.png</FileImageSource>
+        <Style x:Key="Table" TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0"/>
+                <Setter Property="ColumnSpacing" Value="0"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource MyTextColor}" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="70,0"/>
+        </Style>
+        <Style x:Key="MyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource MyTextColor}"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                
+        </Style>
+        <Style x:Key="MyTitle" TargetType="Label" BaseResourceKey="MyLabel">
+                <Setter Property="FontSize" Value="{DynamicResource MyTitleFontSize}"/>
+        </Style>
+        <Style x:Key="MySubTitle" TargetType="Label" BaseResourceKey="MyLabel">
+                <Setter Property="FontSize" Value="{DynamicResource MySubTitleFontSize}"/>
+        </Style>
+        <Style x:Key="MyContent" TargetType="Label" BaseResourceKey="MyLabel">
+                <Setter Property="FontSize" Value="{DynamicResource MyContentFontSize}"/>
+        </Style>
+        <Style x:Key="MyMicro" TargetType="Label" BaseResourceKey="MyLabel">
+                <Setter Property="FontSize" Value="{DynamicResource MyMicroFontSize}"/>
+        </Style>
+    </Application.Resources>
+</Application>

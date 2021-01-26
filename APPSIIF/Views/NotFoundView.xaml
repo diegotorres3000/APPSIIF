@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.NotFoundView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <StackLayout>
+        <renderer:MyImageRenderer Source="error404"
+                                  WidthRequest="{DynamicResource ScreenWidth}"
+                                  HeightRequest="{DynamicResource ScreenWidth}"
+                                  Foreground="Transparent"
+                                  Margin="0,50,0,0"/>
+        <Label Text="Oops!"
+               Style="{DynamicResource MyContent}"
+               TextColor="{DynamicResource StartColorGradientText}"/>
+        <Label Text="La pagina no ha sido encontrada."
+               Style="{DynamicResource MyContent}"
+               TextColor="{DynamicResource StartColorGradientText}"/>
+        <renderer:MyButtonRenderer Text="Reintentar"
+                                   IsGradient="True"
+                                   TextColor="White"
+                                   Margin="20"/>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

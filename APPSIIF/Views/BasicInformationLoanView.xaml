@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.BasicInformationLoanView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+
+    <StackLayout>
+        <renderer:MyFrameRenderer TypeBorder="None"
+                                  Margin="0,0,0,10">
+            <Label Style="{DynamicResource MySubTitle}"
+                   Text="Informacion Basica del Prestamo"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        </renderer:MyFrameRenderer>
+
+        <ScrollView>
+            <StackLayout>
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          Padding="0">
+                    
+                     <Grid RowSpacing="0"
+                           ColumnSpacing="0"
+                           Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="{DynamicResource MyMenuImageSize}"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MySubTitle}"
+                               Text="Cliente"/>
+                        <renderer:MyButtonRenderer Grid.Column="1"
+                                                   Grid.Row="0"
+                                                   Text=">"
+                                                   IsGradient="False"
+                                                   StaticColor="{DynamicResource MyTextColor}"
+                                                   TextColor="{DynamicResource StartColorGradient}"
+                                                   HeightRequest="{DynamicResource MyMenuImageSize}"
+                                                   WidthRequest="{DynamicResource MyMenuImageSize}"
+                                                   Clicked="ViewCustomerInformation"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="False"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          IsVisible="{Binding IsClientVisible}">
+                    <Grid>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Identificacion"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="1057601353"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Nombre"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Diego Alejandro Duran Gomez"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          Padding="0">
+                    <Grid RowSpacing="0"
+                           ColumnSpacing="0"
+                           Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{DynamicResource MyMenuImageSize}"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="{DynamicResource MyMenuImageSize}"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{DynamicResource MySubTitle}"
+                               Text="Prestamo"/>
+                        <renderer:MyButtonRenderer Grid.Column="2"
+                                                   Grid.Row="0"
+                                                   Text=">"
+                                                   IsGradient="False"
+                                                   StaticColor="{DynamicResource MyTextColor}"
+                                                   TextColor="{DynamicResource StartColorGradient}"
+                                                   HeightRequest="{DynamicResource MyMenuImageSize}"
+                                                   WidthRequest="{DynamicResource MyMenuImageSize}"
+                                                   Clicked="ViewLoanInformation"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="False"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          IsVisible="{Binding IsLoanVisible}">
+                    <Grid>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Numero"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="00420500000000075"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Fecha de Apertura"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="2018/04/14"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Fecha de Desembolso"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="2020/05/20"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Valor Original"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="3,000,000.00"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="4"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Saldo"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="4"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="387,900.00"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="5"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Plazo"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="5"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="24 Meses"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="6"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Agencia"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="6"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Tunja-Boyaca"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="7"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Estado"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="7"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Vigente 0 dias de Mora"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="8"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Dias de Mora"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="8"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="0"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          Padding="0">
+                    <Grid RowSpacing="0"
+                           ColumnSpacing="0"
+                           Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MySubTitle}"
+                               Text="Producto"/>
+                        <renderer:MyButtonRenderer Grid.Column="1"
+                                                   Grid.Row="0"
+                                                   Text=">"
+                                                   IsGradient="False"
+                                                   StaticColor="{DynamicResource MyTextColor}"
+                                                   TextColor="{DynamicResource StartColorGradient}"
+                                                   HeightRequest="40"
+                                                   WidthRequest="40"
+                                                   Clicked="ViewProductInformation"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="False"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          IsVisible="{Binding IsProductVisible}">
+                    <Grid>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Descripcion"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Personal Rotativo"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Destino Economico"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Vehiculos"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Plan de Interes"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Plan Cupo Cdto Rotativo Prefer"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Plan de Pago"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="1"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          Padding="0">
+                    <Grid RowSpacing="0"
+                           ColumnSpacing="0"
+                           Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MySubTitle}"
+                               Text="Pago"/>
+                        <renderer:MyButtonRenderer Grid.Column="1"
+                                                   Grid.Row="0"
+                                                   Text=">"
+                                                   IsGradient="False"
+                                                   StaticColor="{DynamicResource MyTextColor}"
+                                                   TextColor="{DynamicResource StartColorGradient}"
+                                                   HeightRequest="40"
+                                                   WidthRequest="40"
+                                                   Clicked="ViewPaymentInformation"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="False"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          IsVisible="{Binding IsPaymentVisible}">
+                    <Grid>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Proximo Pago"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="2020/05/20"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Tasa de Interes Corriente"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="42"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Modalidad"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="Vencido"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="Start"
+                               Text="Tasa de Interes de Mora"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Style="{DynamicResource MyContent}"
+                               TextColor="{DynamicResource StartColorGradientText}"
+                               HorizontalTextAlignment="End"
+                               Text="2.27"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10"
+                                          Padding="9">
+                    <Grid RowSpacing="0"
+                          ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="41"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Style="{DynamicResource MySubTitle}"
+                               Text="Interes"/>
+                        <renderer:MyButtonRenderer Grid.Column="1"
+                                                   Grid.Row="0"
+                                                   Text=">"
+                                                   IsGradient="False"
+                                                   StaticColor="{DynamicResource MyTextColor}"
+                                                   TextColor="{DynamicResource StartColorGradient}"
+                                                   Clicked="ViewInterests"/>
+                    </Grid>
+                </renderer:MyFrameRenderer>
+
+                <renderer:MyFrameRenderer IsGradient="True"
+                                          TypeBorder="All"
+                                          BorderRadius="10"
+                                          Margin="20,0,20,10">
+                    <Label Style="{DynamicResource MySubTitle}"
+                           Text="Indice de moras"/>
+                </renderer:MyFrameRenderer>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

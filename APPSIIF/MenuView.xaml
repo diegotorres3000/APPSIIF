@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPSIIF.MenuView"
+             xmlns:pages="clr-namespace:APPSIIF"
+             xmlns:renderer="clr-namespace:APPSIIF.Renderer">
+   <MasterDetailPage.Resources>
+   </MasterDetailPage.Resources> 
+   <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="{DynamicResource ItemColor}">
+                    <renderer:MyFrameRenderer HeightRequest="160" TypeBorder="None" HasShadow="False">
+                        <Grid Margin="0,30,0,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>                            
+                            <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   Grid.ColumnSpan="2"
+                                   Text="APPSIIF"
+                                   FontSize="{DynamicResource MyTitleFontSize}"
+                                   TextColor="{DynamicResource MyTextColor}"
+                                   HorizontalOptions="Center">
+                            </Label>
+                            <renderer:MyFrameRenderer Grid.Row="1"
+                                                      Grid.Column="0"
+                                                      TypeBorder="All"
+                                                      BorderRadius="80"
+                                                      IsGradient="False"
+                                                      StaticColor="{DynamicResource MyTextColor}"
+                                                      Padding="0">
+                                <Label Text="{Binding NamePerson}"
+                                       FontAttributes="Bold"
+                                       Style="{StaticResource MySubTitle}"
+                                       TextColor="{DynamicResource StartColorGradient}"/>
+                            </renderer:MyFrameRenderer>
+                            <Label Grid.Column="1"
+                                   Grid.Row="1"
+                                   Style="{DynamicResource MySubTitle}"
+                                   Text="{Binding NamePerson}"
+                                   FontAttributes="Bold">
+                            </Label>
+                        </Grid>
+                    </renderer:MyFrameRenderer>
+                
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <ListView ItemsSource="{Binding MenuItems}"
+                              VerticalOptions="FillAndExpand"
+                              HasUnevenRows="True"
+                              SeparatorVisibility="None"
+                              ItemSelected="SelectMenuItem"
+                              BackgroundColor="{DynamicResource ItemColor}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Margin="20,10,20,10"
+                                             BackgroundColor="{DynamicResource ItemColor}">
+                                    <renderer:MyImageRenderer Source="{Binding Icon}"
+                                           WidthRequest="{StaticResource MyMenuImageSize}"
+                                           HeightRequest="{StaticResource MyMenuImageSize}"
+                                           VerticalOptions="Start"
+                                           Foreground="{DynamicResource StartColorGradientText}"/>
+                                    <Label Text="{Binding Title}"
+                                           VerticalOptions="Center"
+                                           TextColor="{DynamicResource StartColorGradientText}"
+                                           FontAttributes="Bold"
+                                           FontSize="{DynamicResource MySubTitleFontSize}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

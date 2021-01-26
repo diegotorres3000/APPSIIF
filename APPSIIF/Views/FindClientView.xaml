@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.FindClientView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <StackLayout>
+        <renderer:MyFrameRenderer TypeBorder="None"
+                                  Margin="{DynamicResource MyTitleMargin}">
+            <Label Style="{DynamicResource MySubTitle}"
+                   Text="Buscar Cliente"/>
+        </renderer:MyFrameRenderer>
+
+        <ScrollView>
+            <StackLayout>
+                <renderer:MyPickerRenderer Title="Tipo de Documento"
+                                           TextColor="{DynamicResource StartColorGradientText}"
+                                           StaticColor="{DynamicResource ItemColor}"
+                                           TitleColor="{DynamicResource EndColorGradientText}"
+                                           Position="Left"
+                                           Margin="{DynamicResource MyElementFormMargin}">
+                    <Picker.Behaviors>
+                    </Picker.Behaviors>
+                </renderer:MyPickerRenderer>
+                <renderer:MyEntryRenderer SourceImageLeft="icon_nid.png"
+                                          Placeholder="Numero de Documento"
+                                          ImageLeftColor="{DynamicResource StartColorGradientText}"
+                                          ImageRightColor="{DynamicResource EndColorGradientText}"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                          Margin="{DynamicResource MyElementFormMargin}">
+                        <Entry.Behaviors>
+                        </Entry.Behaviors>
+                </renderer:MyEntryRenderer>
+                <renderer:MyButtonRenderer Style="{StaticResource ButtonStyle}"
+                                           Text="Buscar"
+                                           TypeBorder="All"
+                                           IsGradient="True"
+                                           IsEnabled="True"
+                                           Clicked="FindClientClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

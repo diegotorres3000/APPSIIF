@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.SubMenuView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                IsGradient="False"
+                                BackgroundColor="{DynamicResource BackColor}">
+    <renderer:MyContentPageRenderer.Resources>
+        <Style TargetType="Grid">
+			<Setter Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal" />
+						<VisualState x:Name="Selected">
+							<VisualState.Setters>
+								<Setter Property="BackgroundColor" Value="{DynamicResource BackColor}" />
+							</VisualState.Setters>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateGroupList>
+			</Setter>
+		</Style>
+    </renderer:MyContentPageRenderer.Resources>
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding MenuItems}"
+                        SelectionChanged="SelectCurrentSubMenu"
+                        SelectionMode="Single"
+                        Margin="20"
+                        x:Name="Menu">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <renderer:MyFrameRenderer IsGradient="False"
+                                              TypeBorder="All"
+                                              BorderRadius="10"
+                                              StaticColor="{DynamicResource ItemColor}"
+                                              HeightRequest="{DynamicResource MyMenuFullSize}">
+                        <StackLayout>
+                            <renderer:MyImageRenderer Source="{Binding Icon}"
+                                                      HeightRequest="{DynamicResource MyMenuImageSize}"
+                                                      WidthRequest="{DynamicResource MyMenuImageSize}"
+                                                      Foreground="{DynamicResource StartColorGradientText}">
+                            </renderer:MyImageRenderer>
+                            <Label Style="{DynamicResource MyContent}"
+                                   Text="{Binding Title}"
+                                   TextColor="{DynamicResource StartColorGradientText}">
+                            </Label>
+                        </StackLayout>
+                    </renderer:MyFrameRenderer>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</renderer:MyContentPageRenderer>

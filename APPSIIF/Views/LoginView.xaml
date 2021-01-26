@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<renderer:MyContentPageRenderer xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="APPSIIF.Views.LoginView"
+                                xmlns:renderer="clr-namespace:APPSIIF.Renderer"
+                                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                mc:Ignorable="d">
+ 
+    <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="Start">
+
+        </StackLayout >
+        <ScrollView VerticalOptions="CenterAndExpand">
+            <StackLayout Padding ="5" Margin="10,0">
+                <StackLayout>
+                    <Image Source="{StaticResource CompanyImage}"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       VerticalOptions="Start"/>
+                </StackLayout>
+
+                <renderer:MyEntryRenderer SourceImageLeft="icon_nid.png"
+                                          Placeholder="Nombre de Usuario"
+                                          IsRequired="True"
+                                          ImageLeftColor="{DynamicResource StartColorGradientText}"
+                                          ImageRightColor="{DynamicResource EndColorGradientText}"
+                                          Text="{Binding TextNickName}"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                          IsVisible="{Binding IsVisibleLogin}">
+                        <Entry.Behaviors>
+                        </Entry.Behaviors>
+                    </renderer:MyEntryRenderer>
+
+                <Label HorizontalTextAlignment="Center"
+                       IsVisible="false"
+                       FontSize="{DynamicResource MyMicroFontSize}"
+                       TextColor="{DynamicResource MyRed}" />
+
+                <renderer:MyEntryRenderer SourceImageLeft="icon_pass.png"
+                                          ImageLeftColor="{DynamicResource StartColorGradientText}"
+                                          ImageRightColor="{DynamicResource EndColorGradientText}"
+                                          Placeholder="Contraseña"
+                                          MyIsPassword="true"
+                                          Text="{Binding TextPassword}"
+                                          StaticColor="{DynamicResource ItemColor}"
+                                          PlaceholderColor="{DynamicResource EndColorGradientText}"
+                                          IsRequired="True"
+                                          IsVisible="{Binding IsVisibleLogin}">
+                       <Entry.Behaviors>
+                       </Entry.Behaviors>
+                </renderer:MyEntryRenderer>
+
+                <Label HorizontalTextAlignment="Center"
+                       IsVisible="false"
+                       FontSize="{DynamicResource MyMicroFontSize}"
+                       TextColor="{DynamicResource MyRed}"/>
+
+                <Grid Margin="{DynamicResource MyElementFormMargin}"
+                      IsVisible="{Binding IsVisibleLogin}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Switch Grid.Row="0"
+                            Grid.Column="0"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            OnColor="{DynamicResource StartColorGradient}"
+                            Toggled="RememberUserName"
+                            IsToggled="{Binding IsRememberingUserName}">
+                    </Switch>
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalOptions="End"
+                           Text="Recordar Nombre de Usuario"
+                           VerticalOptions="Center"
+                           TextColor="{DynamicResource MyTextColor}"
+                           FontSize="{DynamicResource MyContentFontSize}"/>
+                </Grid>
+
+                <renderer:MyButtonRenderer Text="Ingresar"
+                                           Style="{StaticResource ButtonStyle}"
+                                           StaticColor="{DynamicResource StartColorGradient}"
+                                           IsVisible="{Binding IsVisibleLogin}"
+                                           Clicked="LoginClicked"
+                                           TypeBorder="All"
+                                           IsGradient="False"
+                                           IsEnabled="True"/>
+                <renderer:MyButtonRenderer Text="Recuperar Contraseña"
+                                           Style="{StaticResource ButtonStyle}"
+                                           StaticColor="{DynamicResource StartColorGradient}"
+                                           IsVisible="{Binding IsVisibleLogin}"
+                                           Clicked="RecoverPasswordClicked"
+                                           TypeBorder="All"
+                                           IsGradient="False"
+                                           IsEnabled="True"/>
+                <renderer:MyButtonRenderer Text="Registrarme"
+                                           Style="{StaticResource ButtonStyle}"
+                                           StaticColor="{DynamicResource StartColorGradient}"
+                                           Clicked="RegisterClicked"
+                                           IsVisible="{Binding IsVisibleRegister}"
+                                           TypeBorder="All"
+                                           IsGradient="False"
+                                           IsEnabled="True"/>
+
+            </StackLayout>
+    </ScrollView>
+
+    <StackLayout VerticalOptions="Start"
+                 Orientation="Horizontal"
+                 Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="{StaticResource BackImage}"
+                   HeightRequest="25"
+                   WidthRequest="25"
+                   MinimumHeightRequest="25"
+                   MinimumWidthRequest="25"
+                   HorizontalOptions="End"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+            <Label Text="Copyright SistemasGyG"
+                   Style="{DynamicResource MyMicro}"
+                   HorizontalOptions="Start"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+        </Grid> 
+    </StackLayout>
+        
+    </StackLayout>
+</renderer:MyContentPageRenderer>
